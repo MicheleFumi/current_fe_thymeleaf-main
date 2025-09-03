@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">	<title>JPA</title>
+</head>
+<body>
+<nav th:insert="~{fragments/navigation :: block-navigation('Certificato Medico')}"></nav>
+
+<div class="container">
+
+
+	<a th:if="${#lists.isEmpty(certificato)}"th:href="@{createCertificato(socioID=${socioID})}" class="btn btn-outline-primary">Aggiungi Certificato</a>
+
+	<table class="table table-striped text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Tipo</th>
+            <th scope="col">Data Certificato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="c : ${certificato}"
+        th:attr="data-id=${c.id}"
+				class="clickable-row" style='cursor: pointer'>
+            <td th:text="${c.tipo ? 'Agonistico' : 'Normale'}"></td>
+            <td th:value="${c.dataCertificatoFormatted}" th:text="${c.dataCertificatoFormatted}"></td>
+        </tr>
+    </tbody>
+</table>
+	
+
+</div>
+<script>
+	  document.addEventListener("DOMContentLoaded", function () {
+	        const rows = document.querySelectorAll(".clickable-row");
+	        rows.forEach(row => {
+	            row.addEventListener("click", () => {
+	                const certId = row.getAttribute("data-id");
+	                if (certId) {
+	                    window.location.href = `/updateCertificato?id=${certId}`;
+	                }
+	            });
+	        });
+	    });
+
+	</script>
+</body>
+</html>

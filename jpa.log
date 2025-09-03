@@ -1,0 +1,429 @@
+2025-09-03T09:02:47.131+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5537 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:02:47.133+02:00 DEBUG 5537 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:02:47.134+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:02:47.157+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-03T09:02:47.157+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-03T09:02:47.614+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:02:47.620+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:02:47.620+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:02:47.636+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:02:47.636+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 479 ms
+2025-09-03T09:02:47.767+02:00 DEBUG 5537 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:02:47.867+02:00 ERROR 5537 --- [projectJPAFrontend] [restartedMain] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-09-03T09:02:47.922+02:00  WARN 5537 --- [projectJPAFrontend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'utenteServices' defined in file [/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes/com/betacom/fe/configuration/UtenteServices.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'InMemoryUserDetailsManager' defined in class path resource [com/betacom/fe/configuration/InMemorySecurityConfig.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'InMemoryUserDetailsManager' threw exception with message: Connection refused: localhost/127.0.0.1:9090
+2025-09-03T09:02:47.923+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-09-03T09:02:47.929+02:00  INFO 5537 --- [projectJPAFrontend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-03T09:02:47.938+02:00 ERROR 5537 --- [projectJPAFrontend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'utenteServices' defined in file [/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes/com/betacom/fe/configuration/UtenteServices.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'InMemoryUserDetailsManager' defined in class path resource [com/betacom/fe/configuration/InMemorySecurityConfig.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'InMemoryUserDetailsManager' threw exception with message: Connection refused: localhost/127.0.0.1:9090
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.8.jar:3.4.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.8.jar:3.4.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.8.jar:3.4.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.8.jar:3.4.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.8.jar:3.4.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.8.jar:3.4.8]
+	at com.betacom.fe.ProjectJpaFrontendApplication.main(ProjectJpaFrontendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.8.jar:3.4.8]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'InMemoryUserDetailsManager' defined in class path resource [com/betacom/fe/configuration/InMemorySecurityConfig.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'InMemoryUserDetailsManager' threw exception with message: Connection refused: localhost/127.0.0.1:9090
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'InMemoryUserDetailsManager' threw exception with message: Connection refused: localhost/127.0.0.1:9090
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 38 common frames omitted
+Caused by: org.springframework.web.reactive.function.client.WebClientRequestException: Connection refused: localhost/127.0.0.1:9090
+	at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.9.jar:6.2.9]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ Request to GET http://localhost:9090/rest/utente/list [DefaultWebClient]
+Original Stack Trace:
+		at org.springframework.web.reactive.function.client.ExchangeFunctions$DefaultExchangeFunction.lambda$wrapException$9(ExchangeFunctions.java:137) ~[spring-webflux-6.2.9.jar:6.2.9]
+		at reactor.core.publisher.MonoErrorSupplied.subscribe(MonoErrorSupplied.java:55) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onError(FluxPeek.java:222) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onError(MonoNext.java:93) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyMain.onError(MonoFlatMapMany.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.whenError(FluxRetryWhen.java:229) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenOtherSubscriber.onError(FluxRetryWhen.java:279) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onError(FluxContextWrite.java:121) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.maybeOnError(FluxConcatMapNoPrefetch.java:327) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.onNext(FluxConcatMapNoPrefetch.java:212) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:476) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.SinkManyEmitterProcessor$EmitterInner.drainParent(SinkManyEmitterProcessor.java:620) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxPublish$PubSubInner.request(FluxPublish.java:874) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.request(FluxConcatMapNoPrefetch.java:337) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.request(FluxContextWrite.java:136) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Operators$DeferredSubscription.request(Operators.java:1742) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxRetryWhen$RetryWhenMainSubscriber.onError(FluxRetryWhen.java:196) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.http.client.HttpClientConnect$MonoHttpConnect$ClientTransportSubscriber.onError(HttpClientConnect.java:325) ~[reactor-netty-http-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$DisposableAcquire.onError(DefaultPooledConnectionProvider.java:174) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.internal.shaded.reactor.pool.AbstractPool$Borrower.fail(AbstractPool.java:479) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.internal.shaded.reactor.pool.SimpleDequePool.lambda$drainLoop$9(SimpleDequePool.java:443) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.FluxDoOnEach$DoOnEachSubscriber.onError(FluxDoOnEach.java:186) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoCreate$DefaultMonoSink.error(MonoCreate.java:205) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.resources.DefaultPooledConnectionProvider$PooledConnectionAllocator$PooledConnectionInitializer.onError(DefaultPooledConnectionProvider.java:593) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondError(MonoFlatMap.java:241) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onError(MonoFlatMap.java:315) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.tryFailure(TransportConnector.java:600) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.transport.TransportConnector$MonoChannelPromise.setFailure(TransportConnector.java:546) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at reactor.netty.transport.TransportConnector.lambda$doConnect$7(TransportConnector.java:262) ~[reactor-netty-core-1.2.8.jar:1.2.8]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:603) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:596) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:572) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:505) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:649) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:642) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:131) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:326) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:342) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:784) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104) ~[reactor-core-3.7.8.jar:3.7.8]
+		at reactor.core.publisher.Mono.block(Mono.java:1779) ~[reactor-core-3.7.8.jar:3.7.8]
+		at com.betacom.fe.configuration.CustomUserDetailsServices.lodUsers(CustomUserDetailsServices.java:42) ~[classes/:na]
+		at com.betacom.fe.configuration.InMemorySecurityConfig.InMemoryUserDetailsManager(InMemorySecurityConfig.java:19) ~[classes/:na]
+		at com.betacom.fe.configuration.InMemorySecurityConfig$$SpringCGLIB$$0.CGLIB$InMemoryUserDetailsManager$0(<generated>) ~[classes/:na]
+		at com.betacom.fe.configuration.InMemorySecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>) ~[classes/:na]
+		at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258) ~[spring-core-6.2.9.jar:6.2.9]
+		at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:400) ~[spring-context-6.2.9.jar:6.2.9]
+		at com.betacom.fe.configuration.InMemorySecurityConfig$$SpringCGLIB$$0.InMemoryUserDetailsManager(<generated>) ~[classes/:na]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+		at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1745) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar:6.2.9]
+		at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar:6.2.9]
+		at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+		at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.8.jar:3.4.8]
+		at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.8.jar:3.4.8]
+		at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.8.jar:3.4.8]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.8.jar:3.4.8]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.8.jar:3.4.8]
+		at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.8.jar:3.4.8]
+		at com.betacom.fe.ProjectJpaFrontendApplication.main(ProjectJpaFrontendApplication.java:10) ~[classes/:na]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+		at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.8.jar:3.4.8]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: localhost/127.0.0.1:9090
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:973) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:336) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:339) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:784) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.123.Final.jar:4.1.123.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-03T09:09:22.080+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:09:22.081+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:09:22.081+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:09:22.099+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-09-03T09:09:22.099+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-09-03T09:09:22.490+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:09:22.497+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:09:22.497+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:09:22.509+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:09:22.510+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 411 ms
+2025-09-03T09:09:22.621+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:09:22.702+02:00 ERROR 5764 --- [projectJPAFrontend] [restartedMain] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-09-03T09:09:23.495+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:09:23.653+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:09:23.664+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:09:23.669+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 1.734 seconds (process running for 2.108)
+2025-09-03T09:09:27.725+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T09:09:27.725+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T09:09:27.726+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-03T09:15:41.652+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2025-09-03T09:15:41.669+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:15:41.687+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:15:41.774+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:15:41.774+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:15:41.774+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:15:41.910+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:15:41.912+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:15:41.912+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:15:41.916+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:15:41.917+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 141 ms
+2025-09-03T09:15:41.925+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:15:42.523+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:15:42.566+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:15:42.574+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:15:42.576+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.816 seconds (process running for 380.994)
+2025-09-03T09:15:42.577+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:15:42.941+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T09:15:42.941+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T09:15:42.942+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-03T09:20:26.945+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-03T09:20:26.955+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-13] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:20:26.959+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:20:27.025+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:20:27.025+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:20:27.025+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:20:27.128+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:20:27.129+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:20:27.129+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:20:27.133+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:20:27.133+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 105 ms
+2025-09-03T09:20:27.140+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:20:27.698+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:20:27.733+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:20:27.738+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:20:27.740+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.727 seconds (process running for 666.157)
+2025-09-03T09:20:27.740+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:20:31.873+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T09:20:31.874+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T09:20:31.875+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-03T09:26:21.279+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-09-03T09:26:21.292+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-25] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:26:21.297+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:26:21.364+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:26:21.364+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:26:21.364+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:26:21.465+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:26:21.466+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:26:21.466+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:26:21.470+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:26:21.470+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 104 ms
+2025-09-03T09:26:21.476+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:26:22.039+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:26:22.074+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:26:22.079+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:26:22.081+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.731 seconds (process running for 1020.498)
+2025-09-03T09:26:22.082+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:26:54.387+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T09:26:54.389+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T09:26:54.394+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-09-03T09:29:45.421+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-03T09:29:45.431+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-37] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:29:45.435+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:29:45.501+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:29:45.501+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:29:45.501+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:29:45.589+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:29:45.590+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:29:45.590+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:29:45.594+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:29:45.594+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 92 ms
+2025-09-03T09:29:45.600+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:29:46.160+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:29:46.184+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:29:46.190+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:29:46.192+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.7 seconds (process running for 1224.607)
+2025-09-03T09:29:46.192+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:32:30.182+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-03T09:32:30.189+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-49] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:32:30.191+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:32:30.244+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:32:30.244+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:32:30.244+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:32:30.343+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:32:30.344+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:32:30.345+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:32:30.349+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:32:30.349+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 101 ms
+2025-09-03T09:32:30.355+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:32:30.949+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:32:30.975+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:32:30.980+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:32:30.982+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.747 seconds (process running for 1389.413)
+2025-09-03T09:32:30.983+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:32:31.057+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T09:32:31.057+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T09:32:31.057+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-09-03T09:34:41.703+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-03T09:34:41.711+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-61] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:34:41.718+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:34:41.781+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:34:41.781+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:34:41.781+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:34:41.870+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:34:41.870+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:34:41.870+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:34:41.874+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:34:41.874+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 92 ms
+2025-09-03T09:34:41.879+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:34:42.438+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:34:42.463+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:34:42.468+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:34:42.469+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.697 seconds (process running for 1520.901)
+2025-09-03T09:34:42.470+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:51:33.348+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2025-09-03T09:51:33.356+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-73] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:51:33.361+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:51:33.425+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:51:33.425+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:51:33.426+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:51:33.520+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:51:33.521+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:51:33.521+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:51:33.525+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:51:33.525+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 98 ms
+2025-09-03T09:51:33.530+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:51:34.099+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:51:34.130+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:51:34.134+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:51:34.136+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.723 seconds (process running for 2532.567)
+2025-09-03T09:51:34.136+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:53:16.547+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-09-03T09:53:16.561+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-85] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T09:53:16.564+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T09:53:16.623+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T09:53:16.623+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T09:53:16.623+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T09:53:16.709+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T09:53:16.710+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T09:53:16.710+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T09:53:16.714+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T09:53:16.714+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 91 ms
+2025-09-03T09:53:16.720+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T09:53:17.296+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T09:53:17.321+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T09:53:17.325+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T09:53:17.327+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.714 seconds (process running for 2635.765)
+2025-09-03T09:53:17.327+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T09:53:44.033+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T09:53:44.035+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T09:53:44.044+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2025-09-03T09:58:32.161+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-8] c.b.fe.controller.UtenteController       : creazione utente: UtenteReq(id=null, userName=test, pwd=test, email=test@test.com, role=null)
+2025-09-03T09:58:32.388+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-8] c.b.fe.configuration.UtenteServices      : create test
+2025-09-03T10:04:35.256+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-09-03T10:04:35.267+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-97] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T10:04:35.270+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T10:04:35.342+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T10:04:35.342+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T10:04:35.342+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T10:04:35.440+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T10:04:35.441+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T10:04:35.441+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T10:04:35.445+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T10:04:35.445+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 102 ms
+2025-09-03T10:04:35.450+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T10:04:35.500+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T10:04:35.542+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T10:04:35.547+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T10:04:35.550+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.217 seconds (process running for 3313.99)
+2025-09-03T10:04:35.551+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T10:04:44.226+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T10:04:44.226+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T10:04:44.228+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-03T10:04:47.748+02:00  WARN 5764 --- [projectJPAFrontend] [http-nio-8080-exec-2] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2025-09-03T10:04:59.202+02:00  INFO 5764 --- [projectJPAFrontend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2025-09-03T10:04:59.206+02:00  INFO 5764 --- [projectJPAFrontend] [Thread-109] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T10:04:59.211+02:00  INFO 5764 --- [projectJPAFrontend] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T10:04:59.272+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Starting ProjectJpaFrontendApplication using Java 21.0.6 with PID 5764 (/Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main/target/classes started by michelefumi in /Users/michelefumi/Desktop/corso_java/current_fe_thymeleaf-main)
+2025-09-03T10:04:59.272+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-09-03T10:04:59.272+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-09-03T10:04:59.351+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-03T10:04:59.352+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-03T10:04:59.352+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-09-03T10:04:59.356+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-03T10:04:59.356+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 84 ms
+2025-09-03T10:04:59.362+02:00 DEBUG 5764 --- [projectJPAFrontend] [restartedMain] c.b.f.c.CustomUserDetailsServices        : loading Users.....
+2025-09-03T10:05:00.007+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name InMemoryUserDetailsManager
+2025-09-03T10:05:00.036+02:00  WARN 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-09-03T10:05:00.040+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-03T10:05:00.042+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] c.b.fe.ProjectJpaFrontendApplication     : Started ProjectJpaFrontendApplication in 0.782 seconds (process running for 3338.482)
+2025-09-03T10:05:00.042+02:00  INFO 5764 --- [projectJPAFrontend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-09-03T10:08:49.329+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-03T10:08:49.331+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-03T10:08:49.337+02:00  INFO 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-09-03T10:08:49.660+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-2] c.betacom.fe.controller.SocioController  : Response rc:true
+2025-09-03T10:08:49.674+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-2] c.betacom.fe.controller.SocioController  : Response attivita rc:true
+2025-09-03T10:09:03.604+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-5] c.b.fe.controller.UtenteController       : creazione utente: UtenteReq(id=null, userName=test2, pwd=test2, email=test@t.it, role=null)
+2025-09-03T10:09:03.740+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-5] c.b.fe.configuration.UtenteServices      : create test2
+2025-09-03T10:10:43.024+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] c.betacom.fe.controller.SocioController  : Response rc:true
+2025-09-03T10:10:43.035+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-1] c.betacom.fe.controller.SocioController  : Response attivita rc:true
+2025-09-03T10:14:25.709+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-7] c.betacom.fe.controller.SocioController  : Response rc:true
+2025-09-03T10:14:25.721+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-7] c.betacom.fe.controller.SocioController  : Response attivita rc:true
+2025-09-03T10:14:49.138+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-10] c.betacom.fe.controller.SocioController  : Response rc:true
+2025-09-03T10:14:49.150+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-10] c.betacom.fe.controller.SocioController  : Response attivita rc:true
+2025-09-03T10:15:14.275+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-2] c.betacom.fe.controller.SocioController  : Response rc:true
+2025-09-03T10:15:14.288+02:00 DEBUG 5764 --- [projectJPAFrontend] [http-nio-8080-exec-2] c.betacom.fe.controller.SocioController  : Response attivita rc:true

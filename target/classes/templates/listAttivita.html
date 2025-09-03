@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+	crossorigin="anonymous">
+<title>JPA</title>
+</head>
+<body>
+
+	<nav
+		th:insert="~{fragments/navigation :: block-navigation('Lista Attivita')}"></nav>
+
+	<div class="container mt-3" align="center">
+<a class="btn btn-outline-primary mb-1 " th:href="@{createAttivita}">Crea Nuova Attività</a>
+
+		<table class="table table-striped">
+			<thead>
+				<tr align="center">
+					<th scope="col">Nome</th>
+					<th scope="col">Prezzo</th>
+					<th scope="col">Azioni</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="attivita : ${listAttivita}" align="center">
+					<td th:text="${attivita.descrizione}"></td>
+					<td th:text="${attivita.prezzo}"></td>
+					<td>
+						<a 
+							class="btn btn-outline-warning mb-1 "
+							th:href="@{updateAttivita(attivitaID=${attivita.id})}"
+							>Modifica
+							Attività</a>
+
+						<button type="button"
+							class="btn btn-outline-danger mb-1 apri-modal-RA"
+							data-bs-toggle="modal"
+							data-bs-target="#modalAttivitaRimozioneAttivita"
+							th:attr="data-rimozione-id-att=${attivita.id}">Rimuovi
+							Attività</button>
+
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+
+	
+
+
+<!-- Modal Rimozione Attività -->
+<div class="modal fade" id="modalAttivitaRimozioneAttivita" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Conferma Rimozione</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+
+      <form th:action="@{deleteAttivita}" method="post">
+        <div class="modal-body">
+          <p>Sei sicuro di voler rimuovere questa attività?</p>
+          <input type="hidden" id="IDInputRimozioneAttivita" name="attivitaID" />
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger">Conferma</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		    
+		const aggiuntaButtonsAtt = document.querySelectorAll(".apri-modal-RA");
+		const aggiuntaInputAtt = document.getElementById("IDInputRimozioneAttivita");
+
+		aggiuntaButtonsAtt.forEach(btn => {
+		  btn.addEventListener("click", function () {
+		    const id = btn.getAttribute("data-rimozione-id-att");
+		    aggiuntaInputAtt.value = id;
+		  });
+		});
+
+	});
+	</script>
+</body>
+</html>

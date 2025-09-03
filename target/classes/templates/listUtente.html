@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+	crossorigin="anonymous">
+<title>JPA</title>
+</head>
+<body>
+
+
+	<nav th:insert="~{fragments/navigation :: block-navigation('Gestisci Staff')}"></nav>
+
+	
+
+	
+
+	<div class="container mt-3" align="center">
+	<a 
+		th:href="@{createUtente}"
+		class="btn btn-outline-primary mb-1 "
+		>
+		Aggiungi Utente
+	</a>
+		<table class="table table-striped">
+			<thead>
+				<tr align="center">
+					<th>Username</th>
+					<th>Password</th>
+					<th>Email</th>
+					<th>Ruolo</th>
+					<th>Azioni</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="utente : ${listUt}">
+					<td th:text="${utente.userName}"align="center"></td>
+					<td th:text="${utente.pwd}"align="center"></td>
+					<td th:text="${utente.email}"align="center"></td>
+					<td th:text="${utente.role}"align="center"></td>
+					
+					<td class="text-end">
+						<a 
+							th:href="@{updateUtente(id=${utente.id})}"
+							
+							class="btn btn-outline-warning mb-1 "
+						>
+							Modifica Utente
+						</a>
+
+					<!-- Rimuovi Utente -->
+						<button 
+  							type="button"
+  							class="btn btn-outline-danger mb-1 apri-modal-utente-rimozione"
+  							data-bs-toggle="modal" 
+  							data-bs-target="#modalUtenteRimozione"
+  							th:attr="data-utente-id=${utente.id}">
+  							Rimuovi Utente
+						</button>
+
+					</td>
+				
+				</tr>
+			</tbody>
+
+		</table>
+		
+		
+	</div>
+
+<!-- Modale attività RIMOZIONE UTENTE -->
+<div class="modal fade" id="modalUtenteRimozione" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Rimuovi Utente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+      </div>
+
+      <form th:action="@{removeUtente}" method="post">
+        <div class="modal-body">
+          <!-- hidden input per passare l’ID utente -->
+          <input type="hidden" id="utenteIDInputRimozione" name="id" />
+
+          <p>Sei sicuro di voler eliminare questo utente?</p>
+
+          <div class="container-error mt-2" th:if="*{errorMsg} != null">
+            <span th:text="*{errorMsg}" style="color:red">*</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger">Elimina</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+		</script>
+	
+
+	<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Seleziona tutti i bottoni con classe apri-modal-utente-rimozione
+    const btns = document.querySelectorAll(".apri-modal-utente-rimozione");
+
+    btns.forEach(btn => {
+      btn.addEventListener("click", function () {
+        // Recupera l’id utente dal data-attribute
+        const utenteId = this.getAttribute("data-utente-id");
+        
+        // Inserisci l’id nell’input hidden del modale
+        document.getElementById("utenteIDInputRimozione").value = utenteId;
+      });
+    });
+  });
+</script>
+	
+
+</body>
+</html>

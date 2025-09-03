@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">	<title>JPA</title>
+</head>
+<body>
+<nav th:insert="~{fragments/navigation :: block-navigation('Crea - Aggiorna Attività')}"></nav>
+
+<div align="center" class='container'>
+		<p class='mt-4'>Inserire dati relativi all'attivita</p>
+		<form class='form-content 'th:action="@{saveAttivita}" th:object="${attivita}" method="post">
+			
+			<input type="hidden" th:field="*{id}"/>
+			
+			<table>
+				<tr>
+					<td><label class='form-label'>Descrizione</label></td>				
+					<td><input type="text" th:field="*{descrizione}" name="descrizione" placeholder="es. Spinning" required></td>
+				</tr>
+				<tr>
+					<td><label class='form-label'>Prezzo</label></td>				
+					<td><input type="number" th:field="*{prezzo}" name="prezzo" placeholder="es. 20" required></td>
+				</tr>
+				
+			</table>
+		
+			<button type="submit" class="btn btn-primary mt-3">Conferma</button>
+
+			
+
+		
+		</form>
+	</div>	
+
+
+
+</body>
+</html>

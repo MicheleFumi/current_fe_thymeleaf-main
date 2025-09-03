@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+	crossorigin="anonymous">
+<title>JPA</title>
+</head>
+<body>
+	<nav
+		th:insert="~{fragments/navigation :: block-navigation('Elenco abbonamenti per socio')}"></nav>
+
+	<div class="container">
+		<input type="hidden" name="socioID"  th:value="${socioID}" />
+
+		<table class="table table-striped">
+	<thead>
+		<tr class="text-center">
+			<th>Data Iscrizione</th>
+			<th>Attività</th>
+			<th>Azioni</th>
+			<th>
+				<a th:href="@{createAbbonamento(socioID=${socioID})}" class="btn btn-outline-primary">
+					Crea Nuovo Abbonamento
+				</a>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="abb : ${listAbb}">
+			<td th:text="${abb.dataIscrizione}" class="align-middle text-center"></td>
+
+			<td class="align-middle text-center">
+				<ul class="list-unstyled mb-0">
+					<li th:each="att : ${abb.attivita}">
+						<span th:text="${att.descrizione + ' - ' + att.prezzo + '€'}"></span>
+					</li>
+				</ul>
+			</td>
+
+			<td class="align-middle text-end">
+				<!-- Aggiungi Attività -->
+				<button type="button"
+					class="btn btn-outline-primary mb-1 apri-modal-attivita"
+					data-bs-toggle="modal" data-bs-target="#modalAttivita"
+					th:attr="data-abbonamento-id=${abb.id}">
+					Aggiungi Attività
+				</button>
+
+				<!-- Rimuovi Attività -->
+				<button th:if="${not #lists.isEmpty(abb.attivita)}"
+					type="button"
+					class="btn btn-outline-danger mb-1 apri-modal-attivita-rimozione"
+					data-bs-toggle="modal" data-bs-target="#modalAttivitaRimozione"
+					th:attr="data-abbonamento-idR=${abb.id}">
+					Rimuovi Attività
+				</button>
+
+				<!-- Rimuovi Abbonamento -->
+				<button type="button"
+					class="btn btn-outline-danger mb-1 apri-modal-abbonamento"
+					data-bs-toggle="modal" data-bs-target="#modalAttivitaRimozioneAbbonamento"
+					th:attr="data-abbonamento-id-RA=${abb.id}">
+					Rimuovi Abbonamento
+				</button>
+			</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+		
+	</div>
+
+
+	<!-- Modale attività AGGIUNTA  -->
+	<div class="modal fade" id="modalAttivita" tabindex="-1"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h5 class="modal-title">Aggiungi Attività</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Chiudi"></button>
+				</div>
+
+				<div class="modal-body mb-3">
+					<form th:action="@{createAttivitaAbbonamento}" method="post">
+					
+					
+					<input type="hidden" name="socioID" th:value="${socioID}" />
+						<input type="hidden" id="abbonamentoIDInput" name="abbonamentoID" />
+						
+						
+						<div class="mb-3">
+							<select class="form-select" id="attivita" name="attivitaID"
+								required>
+								<option value="" disabled selected>Seleziona
+									un'attività</option>
+								<option th:each="att : ${attivita}" th:value="${att.id}"
+									th:text="${att.descrizione + ' - ' + att.prezzo + '€'}">
+								</option>
+							</select>
+
+						</div>
+
+
+
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Salva</button>
+							<button type="button" class="btn btn-secondary"
+								data-bs-dismiss="modal">Annulla</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+<!-- Modale attività RIMOZIONE -->
+	<div class="modal fade" id="modalAttivitaRimozione" tabindex="-1"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h5 class="modal-title">Rimuovi Attività</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Chiudi"></button>
+				</div>
+
+				<div class="modal-body mb-3">
+					<form th:action="@{removeAttivitaAbbonamento}" method="post">
+					
+					
+					<input type="hidden" name="socioID" th:value="${socioID}" />
+						<input type="hidden" id="abbonamentoIDInputRimozione" name="abbonamentoID" />
+						
+						
+						<div class="mb-3">
+							<select class="form-select" id="attivita" name="attivitaID"
+								required>
+								<option value="" disabled selected>Seleziona
+									un'attività</option>
+								<option th:each="att : ${attivita}" th:value="${att.id}"
+									th:text="${att.descrizione + ' - ' + att.prezzo + '€'}">
+								</option>
+							</select>
+
+						</div>
+
+
+
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-danger">Elimina</button>
+							<button type="button" class="btn btn-secondary"
+								data-bs-dismiss="modal">Annulla</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+<!-- Modale attività RIMOZIONE -->
+	<div class="modal fade" id="modalAttivitaRimozioneAbbonamento" tabindex="-1"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h5 class="modal-title">Rimuovi Abbonamento</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Chiudi"></button>
+				</div>
+
+				<div class="modal-body">
+					<form th:action="@{removeAbbonamento}" method="post">
+					
+					
+					<input type="hidden" name="socioID" th:value="${socioID}" />
+						<input type="hidden" id="abbonamentoIDInputRimozioneAbbo" name="abbonamentoID" />
+						<div class="modal-body" >
+						<div>Sei sicuro di voler Eliminare Questo Abbonamento?</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-danger">Elimina</button>
+							<button type="button" class="btn btn-secondary"
+								data-bs-dismiss="modal">Annulla</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+	<script>
+	
+	  document.addEventListener("DOMContentLoaded", function () {
+	    // Modal AGGIUNTA ATTIVITA
+	    const aggiuntaButtons = document.querySelectorAll(".apri-modal-attivita");
+	    const aggiuntaInput = document.getElementById("abbonamentoIDInput");
+
+	    aggiuntaButtons.forEach(btn => {
+	      btn.addEventListener("click", function () {
+	        const id = btn.getAttribute("data-abbonamento-id");
+	        aggiuntaInput.value = id;
+	      });
+	    });
+
+	    // Modal RIMOZIONE ATTIVITA
+	    const rimozioneButtons = document.querySelectorAll(".apri-modal-attivita-rimozione");
+	    const rimozioneInput = document.getElementById("abbonamentoIDInputRimozione");
+
+	    rimozioneButtons.forEach(btn => {
+	      btn.addEventListener("click", function () {
+	        const id = btn.getAttribute("data-abbonamento-idR"); 
+	        rimozioneInput.value = id;
+	      });
+	    });
+	    
+	    
+	    // Modal RIMOZIONE ABBONAMENTO
+	    
+	    const aggiuntaButtonsAbb = document.querySelectorAll(".apri-modal-abbonamento");
+	    const aggiuntaInputAbb = document.getElementById("abbonamentoIDInputRimozioneAbbo");
+	    aggiuntaButtonsAbb.forEach(btn => {
+		      btn.addEventListener("click", function () {
+		        const id = btn.getAttribute("data-abbonamento-id-RA");
+		        aggiuntaInputAbb.value = id;
+		      });
+		    });
+	    
+	    
+	    
+	  });
+	</script>
+
+  
+  
+  
+
+
+</body>
+</html>
